@@ -1,0 +1,76 @@
+<div class="box_header">
+  <div class="header01">
+    <span>您好，欢迎来到好孕妈妈！</span>
+    <ul id="session_info">
+  <!--  
+      <li><a href="#" class="weibo">官方微博</a>  </li>
+      <li><a href="#">设为首页</a> | </li>
+      <li><a href="#">加入收藏</a></li>
+  --> 
+    <%= render "shared/default_session_info" %>
+    </ul>
+  </div>
+  <div class="header02">
+    <div class="helogo"><%= picture("LOGO", '260px', '85px') %></div>
+    <div class="heby"><img src="/images/main/header_byimg.png" width="197" height="100" border="0" /></div>
+    <div class="heimg"><img src="/images/main/header_picimg.png" width="224" height="100" border="0" /></div>
+    <div class="hetel"><img src="/images/main/header_tel.png" width="231" height="100" border="0" /></div>
+    <div class="heerweima">
+      <%= picture("首页二维码", '65px', '65px') %>
+    </div>
+  </div>
+    
+  <div class="header_nav">
+    <div class="nav-left"></div>
+      <% if Code.at("导航") %>
+        <%= code("导航") %>
+      <% else %>
+      <ul id="top_nav">
+      <li><a href="/">首页</a></li>
+      <li><a href="/articles/16">品牌故事</a>
+        <dl>
+          <dd><a href="/articles/16">好孕服务</a></dd>
+          <dd><a href="/articles/17">好孕优势</a></dd>
+          <dd><a href="/articles/18">教学环境</a></dd>
+          <dd><a href="/articles/19">好孕文化</a></dd>
+          <dd><a href="/experts">专家团队</a></dd>
+          <dd><a href="/articles/21">联系我们</a></dd>
+        </dl>
+      </li>
+      <li><%= link_to_blank "胎教课堂", care_path %></a>
+        <dl>
+          <dd><a href="/care?name=孕智慧">孕智慧 (孕产知识)</a></dd>
+          <dd><a href="/care?name=孕轻松">孕轻松 (胎教瑜伽)</a></dd>
+          <dd><a href="/care?name=孕心灵">孕心灵 (情绪胎教)</a></dd>
+          <dd><a href="/care?name=孕美味">孕美味 (营养胎教)</a></dd>
+          <dd><a href="/care?name=孕品质">孕品质 (音乐胎教)</a></dd>
+        </dl>
+      </li>
+      <li><a href="/articles/6">产后恢复</a>
+        <dl>
+          <dd><a href="/articles/6">产后运动</a></dd>
+          <dd><a href="/articles/5">体质调理</a></dd>
+          <dd><a href="/articles/8">体形恢复</a></dd>
+          <dd><a href="/articles/9">通乳催乳</a></dd>
+        </dl>
+      </li>
+      <li><a href="/vip">VIP服务</a></li>
+      <li><a href="/experts">专家团队</a></li>
+      <li><a href="#">孕育百科</a>
+        <dl>
+          <dd><a href="yyhy.html">备孕期</a></dd>
+          <dd><a href="index.html">孕早期</a></dd>
+          <dd><a href="index.html">孕中期</a></dd>
+          <dd><a href="index.html">孕晚期</a></dd>
+          <dd><a href="index.html">月子期</a></dd>
+          <dd><a href="index.html">产后恢复</a></dd>
+          <dd><a href="index.html">育儿早教</a></dd>
+        </dl>
+      </li>
+      <li style="background:none;"><a href="/articles/21">联系我们</a></li>
+    </ul>
+    <% end -%>
+    <div class="nav-right"></div>
+  </div>
+</div>
+

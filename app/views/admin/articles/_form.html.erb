@@ -1,0 +1,34 @@
+<%= include_rich_text_editor -%>
+<%= simple_form_for [:admin, @article] ,:html => {:multipart => true}  do |f| -%>
+  <%= f.input :title %>
+  <%= f.input :catalog_id do %>
+   	<%= f.hidden_field :catalog_id  %>
+		<%= dynamic_selects Catalog, @article.catalog_id, :article_catalog_id ,:onchange => "show_tags(this.value);" %>
+  <% end -%>
+  <%= f.input :tag_list do %>
+    <% Catalog.with_tags.each do |catalog| %>
+      <div belongs_to = "<%= catalog.id %>" class="hide">
+        <%= f.input_field  "tag_list".to_sym, :as => :check_boxes, :collection => catalog.tags.try(:split), :disabled => true, :input_style => "tags" %>
+      </div>
+    <% end %> 
+  <% end -%>
+  <script>
+    show_tags('<%= @article.catalog_id %>')
+  </script>
+  <%= f.input :quote, :input_html => {:rows => 5, style:"width:600px"} %>
+  <%= f.input :content, :input_html => {:class => "rich-text-editor"} %>
+  <%= f.input :cover do %>
+    <%= image_tag(@article.cover.url(:small)) << "<br/>".html_safe if @article.cover? %>
+    <%= f.file_field :cover  %>
+  <% end -%>   
+  <%#= f.input :xsize %> 
+
+  
+   <%#= f.input :tag_list, :as => :check_boxes, :collection => @article.catalog.tags.split %>
+  <%= f.input :position %>
+  <%= f.input :published %>
+  <%= f.input :recommend %>
+  <%= f.input :dt %>
+  <%= f.input :dt_title %>
+  <%= render '/admin/shared/form_buttons', :f => f  %>
+<% end -%>

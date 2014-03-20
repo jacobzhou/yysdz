@@ -1,0 +1,16 @@
+<%= include_rich_text_editor -%>
+<%= simple_form_for [:admin, @catalog] ,:html => {:multipart => true}  do |f| -%>
+  <%= f.input :parent_id do %>
+   <%= f.hidden_field :parent_id  %>
+   <%= dynamic_selects Catalog, @catalog.parent_id, :catalog_parent_id %>
+  <% end -%>
+  <%= f.input :name %>
+  <%= f.input :template, :collection => Code.on("文章模板").map(&:name), :include_blank => "默认" %>
+  <%= f.input :desc, :input_html => {:class => "rich-text-editor"} %>
+  <%= f.input :tags %>
+  <%= f.input :position %>
+  <%= f.input :seo_title, :as => :text, :input_html => {:class => "small_textarea"} %>
+  <%= f.input :seo_keywords, :as => :text, :input_html => {:class => "small_textarea"} %>
+  <%= f.input :seo_desc, :as => :text, :input_html => {:class => "small_textarea"} %>
+  <%= render '/admin/shared/form_buttons', :f => f  %>
+<% end -%>
