@@ -82,8 +82,8 @@ gem 'kaminari', '0.12.4'
 # #gem 'jammit'  #win下报错
 # #gem 'win32-open3'
 # 保存配置信息
-gem "settingslogic",'2.0.8'
-
+# gem "settingslogic",'2.0.8'
+gem 'rails-settings-cached', '0.2.4'
 group :development do
   #gem 'ruby-debug19', '0.11.6', :require => 'ruby-debug'
   # rake erd可生成实例关系图

@@ -3,15 +3,21 @@ class Admin::ArticlesController < Admin::BaseController
 	# layout 'template'
 	def new
     @article = Article.new(:published => true, :catalog_id => params[:catalog_id])
-	end
+    1.times { @article.attachments.build(:lx => "头像") }
+  end
 
   def create
     @article = Article.new(params[:article])
-    flash_msg(:success) if @article.save
+    if @article.save
+      flash_msg(:success)
+    else
+      1.times { @article.attachments.build(:lx => "头像") } 
+    end
     respond_back @article
   end
 
   def edit
+    1.times { @article.attachments.build(:lx => "头像") } unless @article.cover
   end
 
   def update 
@@ -20,8 +26,7 @@ class Admin::ArticlesController < Admin::BaseController
   end
   
   def index
-    tmp_articles = params[:recommend].present? ? Article.recommend : Article.common
-    @search = tmp_articles.metasearch(params[:search])
+    @search = Article.metasearch(params[:search])
     @articles = @search.includes([:catalog]).order('created_at DESC').page(params[:page]).per(30)
   end
 

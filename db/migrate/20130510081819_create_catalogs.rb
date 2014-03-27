@@ -7,6 +7,7 @@ class CreateCatalogs < ActiveRecord::Migration
       t.string :ancestry
       t.float :position, :default => 0.0
       t.integer :articles_count
+      t.integer :lx_id
       t.timestamps
     end
 

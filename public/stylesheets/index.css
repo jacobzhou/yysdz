@@ -69,7 +69,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner{border:none;padding:
 .hide-arrow{top:0;_position:absolute;_margin-top:0;_top:expression(eval(document.documentElement.scrollTop));z-index:3000;}
 .hide-arrow .arrow{display:none;}
 .topsearch{display:block;width:205px;float:right;margin-top:-3px;}
-.topsearch .search-ipt{width:132px;height:21px;line-height:21px;padding:2px 5px;border:0;border-right:1px solid #B8C3C9;background-color:#fff;float:left;color:#999;}
+.topsearch .search-ipt{width:132px;height:25px;line-height:21px;padding:2px 5px;border:0;border-right:1px solid #B8C3C9;background-color:#fff;float:left;color:#999;}
 .topsearch .search-btn{width:50px;height:25px;line-height:25px;border:0;cursor:pointer;padding:0;text-align:center;background-position:-179px -48px;float:left;color:#5799A1;}
 .topsearch .lg{font-size:14px;text-align:right;padding:8px 12px 10px;}
 .topsearch .lg,.topsearch .lg a{color:#fff;}

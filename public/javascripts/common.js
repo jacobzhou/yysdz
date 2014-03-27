@@ -323,31 +323,6 @@ $(document).ready(
 );
 
 
-//导航条固定顶部
-$().ready(function(){
-    var _defautlTop = $(".topbar").offset().top;
-    var _defautlLeft = $(".topbar").offset().left;
-    var _position = $(".topbar").css('position');
-    var _top = $(".topbar").css('top');
-    var _left = $(".topbar").css('left');
-    var _zIndex = $(".topbar").css('z-index');
-    $(window).scroll(function(){
-        if($(this).scrollTop() > _defautlTop){
-            if($.browser.msie && $.browser.version=="6.0"){
-              // $(".topbar").css({'position':'absolute','top':eval(document.documentElement.scrollTop),'left':_defautlLeft,'z-index':3000});
-            }else{
-               $(".topbar").css({'position':'fixed','top':0,'left':_defautlLeft,'z-index':3000});
-            }
-			$('.txt-info').hide();
-			$('.topbar').addClass('hide-arrow')
-        }
-		else{
-           // $(".topbar").css({'position':_position,'top':_top,'left':_left,'z-index':_zIndex});
-			$('.txt-info').show()
-			$('.topbar').removeClass('hide-arrow')
-        }
-    });
-});
 
 Array.prototype.remove = function() {
   var what, a = arguments, L = a.length, ax;
@@ -365,41 +340,35 @@ $(function(){
   $.isBlank = function(obj){
     return(!obj || $.trim(obj) === "");
   };
+// multi-level selector
 
-  /*登录状态*/
-  // $("#session_info").load('/check_session');
-
-   // 级联下拉框
   $('select.multi-level').live('change', function() {
     $selector = $(this);
 
     $('#' + $selector.attr("aim_id")).val($selector.val());
 
-    if (!$.isBlank($selector.attr("text_id"))) {
-      $('#' + $selector.attr("text_id")).val($selector.find("option:selected").text());
-    }
-
     $.ajax({
       type: "get",
-      url: '/dynamic_selects?id=' + $selector.val() + '&otype=' + $selector.attr("otype") + '&aim_id=' + $selector.attr("aim_id") + '&text_id=' + encodeURI($selector.attr("text_id")),
-      beforeSend: function(XMLHttpRequest) {
-        $selector.nextAll('select').remove();
+      url: '/admin/catalogs/selects?id=' + $selector.val() + '&otype=' + $selector.attr("otype") + '&aim_id=' + $selector.attr("aim_id"),
+      beforeSend: function(XMLHttpRequest){
+        $selector.nextAll().remove();
       },
-      success: function(data, textStatus) {
+      success: function(data, textStatus){
         if (data.length > 0) {
-          $selector.nextAll('select').remove();
-          // $selector.parent().append(data);
-          $selector.after(data);
+          $selector.nextAll().remove();
+          $selector.parent().append(data);
         }
       },
-      complete: function(XMLHttpRequest, textStatus) {
-          //HideLoading();
+      complete: function(XMLHttpRequest, textStatus){
+
+      //HideLoading();
       },
-      error: function() {
-          //请求出错处理
+      error: function(){
+
+      //请求出错处理
       }
     });
-  });
+  }); 
 
   // 日期时间控件
   $('.my97_date').click(function() {

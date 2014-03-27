@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   before_filter :store_location
 
   include Bootstrap::Breadcrumb
-  before_filter :init_breadcrumb, :except => :destroy
+  #before_filter :init_breadcrumb, :except => :destroy
   before_filter :store_location
   
   protected

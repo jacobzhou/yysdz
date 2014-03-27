@@ -18,6 +18,7 @@ Yysdz::Application.routes.draw do
     resources :articles
     resources :roles
     resources :users
+    resources :pictures
   end
 
   resources :articles, :only => ["show", "index"]

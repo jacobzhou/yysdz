@@ -28,7 +28,7 @@ module ApplicationHelper
 
   # Data.yml
   def d(value, data_key)
-    v = Settings.send(data_key).find{ |vs| vs[1] == value }
+    v = Setting.send(data_key).find{ |vs| vs[1] == value }
     return v.blank? ? "" : v.first
   end
 

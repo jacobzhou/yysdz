@@ -140,21 +140,20 @@ function initMenu() {
       }
     );
   }
-$(document).ready(
+$(document).ready(function(){
   //下拉框
-  $("#province").selectbox();
-  $("#city").selectbox();
-  $('.selectbox').click(function(){
-     var dbox=$(this).parent().find('.select-menu')
-     if (dbox.height()>250){
-       dbox.addClass('menu-scroll')
-       }
-  });
-  $('.survey ul input').Checkable({});
+  // $("#province").selectbox();
+  // $("#city").selectbox();
+  // $('.selectbox').click(function(){
+  //    var dbox=$(this).parent().find('.select-menu')
+  //    if (dbox.height()>250){
+  //      dbox.addClass('menu-scroll')
+  //      }
+  // });
+  // $('.survey ul input').Checkable({});
 	//焦点图
 	new Slide('.focuspic',{index: 7 ,effect:'fade',firstDelay:15});
-   function() {initMenu();
-   }
-);
+  initMenu();
+});
 
 

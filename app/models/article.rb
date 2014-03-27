@@ -5,17 +5,23 @@ class Article  < ActiveRecord::Base
   default_scope order('position DESC')
 
   scope :published, where(:published => true)
-  scope :has_cover, where("cover_file_name IS NOT NULL")
-  scope :no_cover, where(:cover_file_name => nil) 
   scope :can_show, published.order('published_at DESC')
   scope :by_position, published.order('position DESC, published_at DESC')
-  scope :recommend, where(:recommend => true)
-  scope :common, where('recommend = 0 or recommend is null ')
-  scope :tops, where(:top => true).by_position
 
   validates :title, :presence => true
   validates :content, :presence => true
   validates :catalog_id, :presence => true
   validates :position, :presence => true
+
+  has_many :attachments, :as => :attable
+  accepts_nested_attributes_for :attachments, :reject_if => lambda { |item| item[:file].blank? }, :allow_destroy => true
+
+  def cover
+    attachments.where(:lx => "头像").first.try(:file)
+  end
+
+  def covers
+    attachments.where(:lx => "头像")
+  end
 
 end

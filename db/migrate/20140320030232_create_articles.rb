@@ -9,6 +9,7 @@ class CreateArticles < ActiveRecord::Migration
       t.text :content
       t.float :position, :default => 0.0
       t.boolean :published
+      t.boolean :cat
       t.integer :top
       t.integer :user_id
       t.timestamps

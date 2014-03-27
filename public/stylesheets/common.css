@@ -149,6 +149,9 @@
 .ml30 {
   margin-left: 30px;
 }
+.ml3 {
+  margin-left: 3px;
+}
 
 .w100{width: 100px;}
 .w120{width: 120px;}
@@ -157,6 +160,7 @@
 .w200{ width: 200px; }
 .w315{ width: 315px; }
 .w340{width: 340px;}
+.w500{width: 500px;}
 .w700{width: 700px;}
 .w1000{width: 1000px;}
 
@@ -223,4 +227,10 @@
 .help-inline {
   color: rgb(223, 30, 30);
   margin-left: 5px;
+}
+.fields {
+  max-height: 70px;
+  /*margin-top: -8px;*/
+  /*clear: both;*/
+  max-width: 150px;
 }

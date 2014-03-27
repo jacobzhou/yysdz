@@ -40,6 +40,7 @@ zh-CN:
     labels:
       # common fields
       defaults:
+        cat: 栏目文章
         sellers: 业务人员
         aunts: 服务人员
         remark: 备注
@@ -94,7 +95,7 @@ zh-CN:
         password: 密码
         password_confirmation: 确认密码
         remember_me: 自动登录
-        quote: 特性
+        quote: 简介
         note: 说明
         recommend: 推荐
         height: 身高（米）
@@ -132,6 +133,7 @@ zh-CN:
         interview_time: "谈单时间"
         work_time: "工作时间（休）"
         return_visit: "回访记录"
+        lx_id: 类型
         lx: 类型
       ht:
         no: 合同编号

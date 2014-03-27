@@ -1,60 +1,51 @@
 <div class="layout-1">
   <!-- 大图轮播 -->
   <div class="focuspic">
-      <ul class="slides" style="width: 5320px; position: relative; ">
-         <li style="position: absolute; z-index: 1; opacity: 0; "><a class="img-btn-2" href="http://www.rahcb.com/services/cases">案例故事</a><a href="http://www.rahcb.com/services/1"><img src="/images/rah/slide_2.jpg" width="760" height="480" alt=""></a></li>
-         <li style="position: absolute; z-index: 1; opacity: 0; "><a class="img-btn-1" href="http://www.rahcb.com/services/cases">案例故事</a><a href="http://www.rahcb.com/services/2"><img src="/images/rah/slide_1.jpg" width="760" height="480" alt=""></a></li>
-         <li style="position: absolute; z-index: 1; opacity: 0; "><a class="img-btn-3" href="http://www.rahcb.com/services/cases">案例故事</a><a href="http://www.rahcb.com/services/3"><img src="/images/rah/slide_3.jpg" width="760" height="480" alt=""></a></li>
-         <li style="position: absolute; z-index: 9; opacity: 1; "><a class="img-btn-4" href="http://www.rahcb.com/services/cases">案例故事</a><a href="http://www.rahcb.com/services/4"><img src="/images/rah/slide_5.jpg" width="760" height="480" alt=""></a></li>
-         <li style="position: absolute; z-index: 1; opacity: 0; "><a class="img-btn-4" href="http://www.rahcb.com/services/cases">案例故事</a><a href="http://www.rahcb.com/services/6"><img src="/images/rah/slide_4.jpg" width="760" height="480" alt=""></a></li>
-         <li style="position: absolute; z-index: 1; opacity: 0; "><a class="img-btn-6" href="http://www.rahcb.com/services/cases">案例故事</a><a href="http://www.rahcb.com/services/5"><img src="/images/rah/slide_6.jpg" width="760" height="480" alt=""></a></li>
-         <!-- <li><a href="/pages/team1"><img src="img/slide_star.jpg" width="760" height="480" alt="" /></a></li> -->
-         <li style="position: absolute; z-index: 1; opacity: 0; "><img src="/images/rah/slide_7.jpg" width="760" height="480" alt=""></li>
-      </ul>
-      <ul class="trigger">
-
-         <li class=""><a href="http://www.rahcb.com/services/1"><img src="/images/rah/slide_small_2.jpg" width="96" height="60" alt=""></a><p>家庭护士</p></li>
-         <li class=""><a href="http://www.rahcb.com/services/2"><img src="/images/rah/slide_small_1.jpg" width="96" height="60" alt=""></a><p>个人护理</p></li>
-         <li class=""><a href="http://www.rahcb.com/services/3"><img src="/images/rah/slide_small_3.jpg" width="96" height="60" alt=""></a><p>康复锻炼</p></li>
-         <li class="current"><a href="http://www.rahcb.com/services/4"><img src="/images/rah/slide_small_5.jpg" width="96" height="60" alt=""></a><p class="line2">专业陪伴<br>轻松就医</p></li>
-         <li><a href="http://www.rahcb.com/services/5"><img src="/images/rah/slide_small_4.jpg" width="96" height="60" alt=""></a><p>陪伴照护</p></li>
-         <li><a href="http://www.rahcb.com/services/6"><img src="/images/rah/slide_small_6.jpg" width="96" height="60" alt=""></a><p>特殊护理</p></li>
-         <li class=""><!-- 留空 --></li>
-         <li class=""><!-- 留空 --></li>
-      </ul>
+    <ul class="slides">
+      <% @pics.each do |article| %>
+        <li>
+          <%= link_to_blank image_tag(article.cover.url, width:"760", height:"480"), article %>
+        </li>
+      <% end -%>
+    </ul>
+    <ul class="trigger">
+      <% @pics.each do |article| %>
+        <li class="">
+          <%= link_to_blank image_tag(article.cover.url, width:"96", height:"60"), article %>
+          <p><%= article.title %></p>
+        </li>
+      <% end -%>
+      <li class=""><!-- 留空 --></li>
+      <li class=""><!-- 留空 --></li>
+    </ul>
    </div>
 </div>
 
 
 <div class="layout-2">
-  <!-- 照护新理念 -->
+  <!-- 健康新理念 -->
   <div class="index-article">
-     <h2 class="title"><a href="http://www.rahcb.com/infos/1">健康新理念</a></h2>
-     <ul>
-        <li>
-           <h3><a href="http://www.rahcb.com/infos/1/posts/167">您是否在家承担照护亲人的责任？2014年给您的十条建议</a></h3>
-           <img src="/images/rah/t_4677NB.jpg" alt="">
-           <p> 如果您和大多数人一样，由于忙着工作和照顾家庭，而过度透支自己；或者您有家庭成员需要亲自护理，是众多家庭照护者中的一员，毫无疑问您肯定感受到了成倍的压力。做一个新年的计划，即使它还列在您的“代办事项清单“上。以下是我们为家庭照护者私人定制的建议，希望这些建议能帮助您及家人在2014年生活得更加欢乐、健康和轻松。<b class="learnmore"><a href="http://www.rahcb.com/infos/1/posts/167">......</a></b></p>
-        </li>
-        <li>
-           <h3><a href="http://www.rahcb.com/infos/1/posts/18">锻炼——治疗关节炎的头号“处方”</a></h3>
-           <p>不久前,确诊患有关节炎的老人被告知要采取很容易和“休息关节”的方法进行治疗。但我们现在知道,这一劝告是建立在未完全理解锻炼的重要性——增强了对关节提供保护作用的肌肉及其他组织的功能。摇椅的日子结束了。我们现在知道,运动是控制骨性关节炎, 类风湿关节炎,红斑狼疮和其他形式关节炎的重要方法。锻炼能够减少疼痛、僵硬和日常活动产生的疲劳。它有助于控制其他可能导致关节炎恶化的慢性疾病,比如心脏疾病和糖尿病。<b class="learnmore"><a href="http://www.rahcb.com/infos/1/posts/18">......</a></b></p>
-        </li>
-     </ul>
+    <h2 class="title">
+      <%= link_to @middle_catalog.name, @middle_catalog.article %>
+    </h2>
+    <ul>
+      <li>
+        <h3><%= link_to @middle_articles[0].title, @middle_articles[0] %>
+        </h3>
+        <%= image_tag @middle_articles[0].cover.url, :width => "236px", :height => "154px" %>
+         <p><%= @middle_articles[0].quote %><b class="learnmore"><%= link_to "......", @middle_articles[0] %></b></p>
+      </li>
+      <li>
+         <h3><%= link_to @middle_articles[1].title, @middle_articles[1] %></h3>
+         <p><%= @middle_articles[1].quote %><b class="learnmore"><%= link_to "......", @middle_articles[1] %></b></p>
+      </li>
+    </ul>
   </div>
   <!-- 资讯与帮助 -->
   <div class="services">
-     <h2 class="title"><a href="http://www.rahcb.com/pages/help1">您是否正面临这样的困惑</a></h2>
+     <h2 class="title"><%= link_to @middle_articles[2].title, @middle_articles[2] %></h2>
      <div class="cont">
-        <p>家人变老的迹象开始时往往很难辨别，但千万不要忽视其征兆，因为细小变化可以非常快地积攒成大问题。如果发现您的亲人出现某些变化，这可能就是需要寻求外界协助的时候：</p>
-        <ul>
-           <li>孩子营养不良</li>
-           <li>不大愿意参加社交活动了</li>
-           <li>出现以前不常有的行为，如变得容易激动，大声说话或沉默寡言</li>
-           <li>出现健忘症状，如忘记吃药等</li>
-           <li>出现财务管理不善症状，如忘记付款或乱买东西</li>
-           <li>忽视个人护理的迹象，如不讲卫生或忽略营养</li>
-        </ul>
+        <%= @middle_articles[2].content.html_safe %>
      </div>
   </div>
 </div>
@@ -63,45 +54,47 @@
 <div class="layout-3">
   <!-- 最新动态 -->
   <div class="index-news">
-     <h2 class="title"><a href="http://www.rahcb.com/news">最新动态</a></h2>
-     <ul>
-          <li><a href="http://www.rahcb.com/news/183">居家照护服务首次纳入保险偿付范畴</a></li>
-          <li><a href="http://www.rahcb.com/news/180">“仁爱华之星”脱颖而出</a></li>
-          <li><a href="http://www.rahcb.com/news/176">人保局领导送来新春温暖慰问</a></li>
-          <li><a href="http://www.rahcb.com/news/168">五谷“暖慰”爱心助残</a></li>
-          <li><a href="http://www.rahcb.com/news/175">慈爱嘉再添一所院校培训基地</a></li>
-          <li><a href="http://www.rahcb.com/news/165">北京国际老龄产业博览会召开</a></li>
-          <li><a href="http://www.rahcb.com/news/162">全国老龄办对海淀南二服务中心进行考察</a></li>
-          <li><a href="http://www.rahcb.com/news/163">市人大代表一行参观海淀南二服务中心</a></li>
-     </ul>
-
+    <h2 class="title">
+      <%= link_to @foot_left_catalog.name, @foot_left_catalog.article %>
+    </h2>
+    <ul>
+      <% @foot_left_articles.each do |article| %>
+        <li><%= link_to article.title, article %></li>
+      <% end -%>
+    </ul>
   </div>
   <div class="mbox">
-     <h2 class="title"><a href="http://www.rahcb.com/news?node=global">全球大视野</a></h2>
-     <ul>
-        <li><em><a href="http://www.rahcb.com/news/44" target="_blank">澳大利亚</a>：</em>历经30年的"联邦居家支持计划"政策方向正逐步发生变化，由原来的政府主导转向消费者个人为主导，所有支持服务的提供，均倾向于以消费者为导向的照护模式。由服务机构对消费者承担更大责任，让老年人实际需求得到满足<b class="learnmore"><a href="http://www.rahcb.com/infos/1/posts/0?slug=global_au" target="_blank">......</a></b></li>
-        <li><em><a href="http://www.rahcb.com/news/43" target="_blank">日本</a>：</em>护理保险制度历经15年，居家服务成为主流。国家对机构服务支付费用增加1.5倍，但对居家服务支付费用却增加5.3倍； 目前，政府每月支付在机构服务和支付在居家接受服务的总费用基本一致，但接受护理服务的人数，居家服务却是机构服务的4倍。也就是20％的养老机构费用＝80％居家服务费用<b class="learnmore"><a href="http://www.rahcb.com/infos/1/posts/0?slug=global_jp" target="_blank">......</a></b></li>
-     </ul>
+    <h2 class="title">
+      <%= link_to @foot_middle_catalog.name, @foot_middle_catalog.article %>
+    </h2>
+    <ul>
+      <% @foot_middle_articles.each do |article| %>
+        <li>
+          <em><%= link_to_blank article.title, article -%>：</em>
+          <%= article.quote -%>
+          <b class="learnmore"><%= link_to_blank "......", article %></b>
+        </li>
+      <% end -%>
+    </ul>
   </div>
   <!-- 仁愛華推荐 -->
   <div class="ibox recomend">
-     <h2 class="title"><a href="http://www.rahcb.com/news?node=tuijian" target="_blank">仁爱华推荐</a></h2>
-     <dl>
-        <dt><a href="http://www.rahcb.com/news/13" target="_blank"><img src="/images/rah/___.png" width="108" alt=""></a></dt>
+    <h2 class="title">
+      <%= link_to @foot_right_catalog.name, @foot_right_catalog.article %>
+    </h2>
+    <% @foot_right_articles.each do |article| %>
+      <dl>
+        <dt>
+          <%= link_to_blank image_tag(article.cover.url, :width => "110px", :height => "110px"), article %>
+        </dt>
         <dd>
-           <h4><a href="http://www.rahcb.com/news/13" target="_blank"><b style="color:#047E8B;">
-            《和老爸在一起的日子》</b></a></h4>
-           <p>
-            <!-- 【美】简妮丝·斯普林 迈克尔·斯普林 著<br/> -->
-            “《和老爸在一起的日子》【美】简妮丝·斯普林迈克尔·斯普林著作品简介：畅销书作家、临床心理医生简妮丝·斯普林和丈夫迈...”</p>
+          <h4>
+            <%= link_to_blank "<b>#{article.title}</b>".html_safe, article %>
+          </h4>
+          <p><%= article.quote %></p>
         </dd>
-     </dl>
-     <dl class="index-caring">
-        <dt><a href="http://www.rahcb.com/carings"><img src="/images/rah/caring.png" width="116" height="135" alt=""></a></dt>
-        <dd>
-           <p style="color:#a4752b"><em style="color:#a4752b;font-style:italic">Caring</em>照护通讯</p>
-           <a class="btn-inquire" href="http://www.rahcb.com/carings">点击查询</a>
-        </dd>
-     </dl>
+      </dl>
+    <% end -%>
   </div>
 </div> 
+
