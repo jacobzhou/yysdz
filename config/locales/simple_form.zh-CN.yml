@@ -105,6 +105,7 @@ zh-CN:
         ctype: 类型
         template: 文章模板
         tags: 标签
+        tag: 标签
         blood_type: 血型
         status: 状态
         jb: 服务级别
@@ -184,6 +185,7 @@ zh-CN:
         xsize: 格式：长x宽
         quote: '摘要，教师专长，产后修复标签（空格隔开）'
         recommend: 栏目文章
+        tag: 相同标签的文章按标签页方式显示在同一页面
         tags: '用空格隔开 如: 孕期抽筋 产兆 月子餐'
         seo_title: "{name}将替换成栏目名称，如：{name},好孕妈妈-胎教专家。下同。"
       teacher:

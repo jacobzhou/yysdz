@@ -8,7 +8,7 @@
     <%= javascript_include_tag "iepng" %>
   <![endif]-->
   <title>私人营养师定制</title>
-  <%= stylesheet_link_tag "common", "index", "custom" %>
+  <%= stylesheet_link_tag "common", "index", "custom", "global" %>
   <%= javascript_include_tag :defaults, "jquery.marquee", "index" %>
   <%= csrf_meta_tag %>
 </head>
@@ -17,7 +17,7 @@
 <%= render "shared/header" %>
 
 <div class="index-layout">
-   <%= yield %>
+  <%= yield %>
 </div>
 
 <!-- footer -->

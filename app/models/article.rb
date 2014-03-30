@@ -24,4 +24,8 @@ class Article  < ActiveRecord::Base
     attachments.where(:lx => "头像")
   end
 
+  def tag_articles
+    Article.where(:tag => self.tag) if self.tag.present?
+  end
+
 end

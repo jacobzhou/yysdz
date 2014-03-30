@@ -12,6 +12,7 @@ class CreateArticles < ActiveRecord::Migration
       t.boolean :cat
       t.integer :top
       t.integer :user_id
+      t.string :tag
       t.timestamps
     end
 
@@ -19,6 +20,7 @@ class CreateArticles < ActiveRecord::Migration
     add_index :articles, :user_id 
     add_index :articles, :published
     add_index :articles, :position 
+    add_index :articles, :tag
 
   end
 

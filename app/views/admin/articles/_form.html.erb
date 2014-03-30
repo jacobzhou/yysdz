@@ -18,6 +18,7 @@
       <% end -%>
     <%= f.link_to_add "添加图片", :attachments, :class => "btn" %>
   <% end -%>
+  <%= f.input :tag %>
   <%= f.input :quote, :input_html => {:rows => 5, :style => "width:600px"} %>
   <%= f.input :content, :input_html => {:class => "rich-text-editor"} %>
   <%= f.input :position %>
