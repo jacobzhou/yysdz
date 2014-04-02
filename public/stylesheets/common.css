@@ -231,6 +231,6 @@
 .fields {
   max-height: 70px;
   /*margin-top: -8px;*/
-  /*clear: both;*/
+  clear: both;
   max-width: 150px;
 }

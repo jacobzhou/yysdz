@@ -3,6 +3,8 @@ class Attachment < ActiveRecord::Base
   belongs_to :attable, :polymorphic => true
   mount_uploader :file, PhotoUploader
 
+  default_scope order('attachments.created_at DESC')
+
   attr_protected
 
   scope :covers, where(:lx => "头像")

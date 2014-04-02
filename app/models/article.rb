@@ -2,7 +2,7 @@
 class Article  < ActiveRecord::Base
   belongs_to :catalog, :counter_cache => true
 
-  default_scope order('position DESC')
+  default_scope order('articles.position DESC, articles.updated_at DESC')
 
   scope :published, where(:published => true)
   scope :can_show, published.order('published_at DESC')
